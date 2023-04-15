@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DEF2F09629D334A900A2653D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF2F09529D334A900A2653D /* main.m */; };
+		DEF2F09E29D3396A00A2653D /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF2F09D29D3396A00A2653D /* MetalKit.framework */; };
+		DEF2F0A129D339A500A2653D /* GPUController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF2F0A029D339A500A2653D /* GPUController.m */; };
+		DEF2F0A329D482DA00A2653D /* add_arrays.metal in Sources */ = {isa = PBXBuildFile; fileRef = DEF2F0A229D482DA00A2653D /* add_arrays.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		DEF2F09229D334A900A2653D /* add */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = add; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF2F09529D334A900A2653D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEF2F09D29D3396A00A2653D /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		DEF2F09F29D339A500A2653D /* GPUController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUController.h; sourceTree = "<group>"; };
+		DEF2F0A029D339A500A2653D /* GPUController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUController.m; sourceTree = "<group>"; };
+		DEF2F0A229D482DA00A2653D /* add_arrays.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = add_arrays.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF2F09E29D3396A00A2653D /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,7 @@
 			children = (
 				DEF2F09429D334A900A2653D /* add */,
 				DEF2F09329D334A900A2653D /* Products */,
+				DEF2F09C29D3396A00A2653D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +67,19 @@
 			isa = PBXGroup;
 			children = (
 				DEF2F09529D334A900A2653D /* main.m */,
+				DEF2F09F29D339A500A2653D /* GPUController.h */,
+				DEF2F0A029D339A500A2653D /* GPUController.m */,
+				DEF2F0A229D482DA00A2653D /* add_arrays.metal */,
 			);
 			path = add;
+			sourceTree = "<group>";
+		};
+		DEF2F09C29D3396A00A2653D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEF2F09D29D3396A00A2653D /* MetalKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF2F0A129D339A500A2653D /* GPUController.m in Sources */,
 				DEF2F09629D334A900A2653D /* main.m in Sources */,
+				DEF2F0A329D482DA00A2653D /* add_arrays.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
