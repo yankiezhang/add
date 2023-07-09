@@ -7,9 +7,10 @@
 
 #import "GPUController.h"
 #import <Metal/Metal.h>
+#import <simd/simd.h>
 
 const unsigned int arrayLength = 1<<23;
-const unsigned int bufferSize  = arrayLength * sizeof(float);
+const unsigned int bufferSize  = arrayLength * sizeof(vector_int2);
 
 @interface GPUController() {
     id<MTLDevice> _device;
@@ -61,15 +62,15 @@ const unsigned int bufferSize  = arrayLength * sizeof(float);
 }
 
 - (void) prepareData: (id<MTLBuffer>)bufferA and:(id<MTLBuffer>)bufferB {
-    float *pBufferA = bufferA.contents;
-    float *pBufferB = bufferB.contents;
+    vector_int2 *pBufferA = bufferA.contents;
+    vector_int2 *pBufferB = bufferB.contents;
     
     NSAssert(pBufferA, @"Null pBufferA");
     NSAssert(pBufferB, @"Null pBufferB");
     
     for (uint32_t i=0; i<arrayLength; i++) {
-        pBufferA[i] = 1.0f;
-        pBufferB[i] = 1.0f;
+        pBufferA[i] = vector2(1, 1);
+        pBufferB[i] = vector2(2, 2);
     }
 }
 
@@ -99,7 +100,7 @@ const unsigned int bufferSize  = arrayLength * sizeof(float);
     [buffer commit];
     [buffer waitUntilCompleted];
     
-    float *ret = _bufferR.contents;
+    vector_int2 *ret = _bufferR.contents;
 }
 
 @end

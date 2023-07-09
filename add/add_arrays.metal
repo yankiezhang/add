@@ -8,9 +8,9 @@
 #include <metal_stdlib>
 using namespace metal;
 
-kernel void add_arrays(device const float* inA,
-                       device const float* inB,
-                       device float* result,
+kernel void add_arrays(constant vector_int2 *inA,
+                       constant vector_int2 *inB,
+                       device vector_int2 *result,
                        uint index [[thread_position_in_grid]])
 {
     // the for-loop is replaced with a collection of threads, each of which
