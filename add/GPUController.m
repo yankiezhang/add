@@ -68,8 +68,8 @@ const unsigned int bufferSize  = arrayLength * sizeof(vector_int2);
     NSAssert(pBufferA, @"Null pBufferA");
     NSAssert(pBufferB, @"Null pBufferB");
     
-    for (uint32_t i=0; i<arrayLength; i++) {
-        pBufferA[i] = vector2(1, 1);
+    for (int i=0; i<arrayLength; i++) {
+        pBufferA[i] = vector2(i+1, i+1);
         pBufferB[i] = vector2(2, 2);
     }
 }
